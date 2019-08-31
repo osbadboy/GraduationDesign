@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>今日推荐</title>
+    {include file="public/header"}
+    <link rel="stylesheet" href="/static/style/css/recommend/index.css">
+</head>
+<body>
+    <div class="layui-fluid">
+        <div class="layui-row">
+            <div class="layui-col-md8 layui-col-md-offset2">
+                <fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+                    <legend><h1>推荐 |</h1></legend>
+                </fieldset>
+                 
+                <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+                    <ul class="layui-tab-title">
+                        <li class="layui-this" id="resou">最热</li>
+                       
+                        <li id="dongtai" id="dynamic">动态</li>
+                    </ul>
+                    <div class="layui-tab-content" style="height: 600px;">
+                        <div class="layui-tab-item layui-show flow-default" id="LAY_demo1"  style="height: 600px;">
+                            
+                            
+                        </div>
+                       
+                        <div class="layui-tab-item" id="tab3" style="height: 600px;"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    {include file="public/menu"}
+    <script src="/static/style/js/recommend/index.js"></script>
+</body>
+</html>

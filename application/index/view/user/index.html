@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>它的个人主页</title>
+    {include file="public/header"}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="/static/style/css/user/index.css">
+</head>
+<body>
+        <aside class="profile-card">
+                <header>
+                  <!-- here’s the avatar  http://lorempixel.com/150/150/people/  -->
+                  <a  href="#">
+                    <img src="/uploads/userphoto/{$user['p_photo']}" class="hoverZoomLink">
+                  </a>
+              
+                  <!-- the username -->
+                  <h1>
+                          {$user['p_username']}
+                        </h1>
+              
+                  <!-- and role or location -->
+                  <h2>
+                    他的star:{$count} | <span class="layui-icon layui-icon-rate-solid my-star {$user['star']?'my-red':''}" id="my-star"></span>
+                        </h2>
+              
+                </header>
+              
+                <!-- bit of a bio; who are you? -->
+                <div class="profile-bio">
+              
+                  <p>
+                  <b> 标签  ：</b>{$user['p_describe']}
+                  </p>
+                  <p style="margin-top:15px;">
+                    <b> 电话 ：</b>{$user['p_phone']}
+                  </p>
+                </div>
+              </aside>
+              <input type="hidden" value="{$Think.session.acount}" id="mine">
+              <input type="hidden" value="{$user['p_acount']}" id="user">
+              <input type="hidden" value="{$user['star']}" id="star">
+    {include file="public/menu"}
+    <script src="/static/style/js/user/index.js"></script>
+</body>
+</html>

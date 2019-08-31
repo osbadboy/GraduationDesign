@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{$Think.session.acount}的个人中心</title>
+    {include file="public/header"}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/style/css/user/my_info.css">
+</head>
+<body>
+    
+    <div class="layui-container">
+        <div class="layui-row" >
+            <div class="layui-col-md8 layui-col-md-offset2">
+                    <div class="container">
+                            <h1>修改我的头像 
+                                
+                            </h1>
+                            <div class="avatar-upload">
+                                <div class="avatar-edit">
+                                    <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
+                                    <label for="imageUpload"></label>
+                                </div>
+                                <div class="avatar-preview">
+                                    <div id="imagePreview" style="background-image: url(/uploads/userphoto/{$user['p_photo']})">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+            </div>
+        </div>
+        <div class="layui-row" style="margin-top:1%;">
+            <div class="layui-col-md8 layui-col-md-offset2" >
+                <form class="layui-form" action="">
+                    <div class="layui-form-item">
+                      <label class="layui-form-label">用户名</label>
+                      <div class="layui-input-block">
+                        <input type="text" name="username" required  lay-verify="required" placeholder="新的用户名" autocomplete="off" class="layui-input" value="{$user['p_username']}">
+                      </div>
+                    </div>
+                   
+                    <div class="layui-form-item">
+                      <label class="layui-form-label">密码</label>
+                      <div class="layui-input-inline">
+                        <input type="password" name="password" required lay-verify="required|pass" placeholder="请输入新的密码" autocomplete="off" class="layui-input" value="{$user['p_password']}">
+                      </div>
+                      <div class="layui-form-mid layui-word-aux">密码大于8位数，同时包含字母和数组</div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">通讯地址</label>
+                        <div class="layui-input-block">
+                          <input type="text" name="address" required   placeholder="地址信息" autocomplete="off" class="layui-input" value="{$user['p_address']}">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">电话号码</label>
+                        <div class="layui-input-block">
+                          <input type="text" name="phone" required  lay-verify="required|phone|number" placeholder="新的电话号码" autocomplete="off" class="layui-input" value="{$user['p_phone']}">
+                        </div>
+                    </div>
+                   
+                    <div class="layui-form-item layui-form-text">
+                      <label class="layui-form-label">我的签名</label>
+                      <div class="layui-input-block">
+                        <textarea name="describe"  placeholder="{$user['p_describe']}" class="layui-textarea" value=""></textarea>
+                      </div>
+                    </div>
+                    <div class="layui-form-item">
+                      <div class="layui-input-block">
+                        <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                      </div>
+                    </div>
+                  </form>
+            </div>
+          </div>
+    </div>
+
+ 
+       
+    
+        
+
+       
+
+    
+    {include file="public/menu"}
+    <script src="/static/style/js/user/my_info.js"></script>    
+   
+</body>
+</html>

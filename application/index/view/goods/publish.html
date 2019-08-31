@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>我的发布</title>
+    {include file="public/header"}
+    <link rel="stylesheet" href="/static/style/css/goods/publish.css">
+</head>
+<body>
+    
+  <div class="demoTable">
+    搜索物件名：
+    <div class="layui-inline">
+      <input class="layui-input" name="id" id="demoReload" autocomplete="off">
+    </div>
+    <button class="layui-btn" data-type="reload">搜索</button>
+  </div>
+
+
+    <div style="margin:55px;">          
+
+        <table class="layui-hide" id="test" lay-filter="demo"></table>
+        
+         <div id="input" style="display:none;">
+            <div class="layui-fluid">
+                <div class="layui-row" id="hide-height" style="margin-top:2%;">
+                    <div class="layui-col-md8 layui-col-sm8 layui-col-md-offset2 layui-col-sm-offset2">
+                        <form class="layui-form" action="#"  enctype ="multipart/form-data">
+                            <div class="layui-form-item">
+                              <label class="layui-form-label">闲置物</label>
+                              <div class="layui-input-block">
+                                <input type="text" name="title" required  lay-verify="required"  autocomplete="off" class="layui-input">
+                              </div>
+                            </div>
+                            <div class="layui-form-item">
+                              <label class="layui-form-label">分类</label>
+                              <div class="layui-input-block">
+                                <select name="category" lay-verify="required" id="category">
+                                  <option value=""></option>  
+                                  <option value="0">电子产品</option>
+                                  <option value="1">书籍</option>
+                                  <option value="2">生活用品</option>
+                                  <option value="3">电器</option>
+                                </select>
+                              </div>
+                            </div>
+                    
+                           
+                            <div class="layui-form-item layui-form-text">
+                              <label class="layui-form-label">物品描述</label>
+                              <div class="layui-input-block">
+                                <textarea name="describe"  class="layui-textarea" maxlength="100"></textarea>
+                              </div>
+                            </div>
+                            <div class="layui-form-item">
+                              <div class="layui-inline">
+                                <label class="layui-form-label">价格</label>
+                                <div class="layui-input-inline" style="width: 100px;">
+                                  <input type="text" name="g_price" placeholder="￥" autocomplete="off" class="layui-input">
+                                </div>
+                              
+                              </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">下架</label>
+                                <div class="layui-input-block">
+                                  <input id="check" type="checkbox" name="switch" lay-skin="switch" lay-text="上架|下架">
+                                </div>
+                              </div>
+                          </form>
+                    </div>
+                </div>
+            </div>
+         </div>
+        <script type="text/html" id="barDemo">
+        
+          <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+          <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+          
+        </script>
+        
+
+       
+
+    
+    {include file="public/menu"}
+    <script src="/static/style/js/goods/publish.js"></script>
+    
+</body>
+</html>

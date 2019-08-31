@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>搜索页</title>
+    {include file="public/header"}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/style/css/index/index.css">
+</head>
+<body class="my-bgcolor">
+    
+    <div class="layui-fluid">
+
+        <!--
+        <div class="layui-row my-row-position1 layui-center">
+            <div class="layui-col-md9 layui-col-sm9 layui-col-xs9" style="height:80px;"></div>
+            <div class="layui-col-md3 layui-col-sm3 layui-col-xs3 my-line-height">
+                <div class="layui-icon layui-icon-add-1 my-icon-size"></div>
+            </div>
+        
+        </div>
+        -->
+        <div class="layui-row my-height" id="hide-height"></div>
+        <div class="layui-row layui-col-space100 my-row-position">
+            <div class="layui-col-md4 layui-col-sm4 my-card-border layui-col-md-offset4 layui-col-sm-offset4 my-change">
+            
+                    <div class="layui-form-item layui-center">
+                        <input type="text" name="title" required value=""  lay-verify="required" placeholder="what do you want..." autocomplete="off" class="layui-input my-border-radius layui-icon-align-center">
+                        <div class="layui-icon layui-icon-search search-icon-size my-click-animation">
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <div class="layui-row row-container">
+            <div class="layui-col-md6 layui-col-sm6 layui-col-md-offset3 layui-col-sm-offset3" id="content-container">
+                <div class="my-dis">
+                  <span>历史搜索：</span>
+                </div>
+                <div class=" flow-default" id="LAY_demo1">
+                    
+                          <input type="hidden" value="{$username['p_username']}" id="username">
+                    
+                    
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    {include file="public/menu"}
+    <script src="/static/style/js/index/index.js"></script>
+</body>
+</html>

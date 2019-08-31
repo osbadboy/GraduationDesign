@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>商品页面</title>
+    {include file="public/header"}
+    <link rel="stylesheet" href="/static/style/css/goods/index.css">
+</head>
+<body>
+    
+
+    <div class='shop'>
+        <div class='gallery'>
+            <!--{$username['p_username']}-->
+            <div class='controls'>
+                <div class='arrows'>
+                    <div class='left'><i class="layui-icon layui-icon-left" aria-hidden="true"></i></div>
+                    <div class='right'><i class="layui-icon layui-icon-right" aria-hidden="true"></i></div>
+                </div>	
+            </div>
+            <div class='images-container'>
+                <div class='images'>
+                   <img src="{$item['g_picpath']}" alt="">
+                    <img src='http://cdn-akamai.audio-technica.com/cms/resource_library/product_images/9808b5d44ab899ea/orig/ath_m50x_3_sq.jpg' />
+                    <img src='http://cdn-akamai.audio-technica.com/cms/resource_library/product_images/847fe5f338a2d20a/orig/ath_m50x_4_sq.jpg' />
+                    <img src='http://cdn-akamai.audio-technica.com/cms/resource_library/product_images/2c90dc8b9b5cb405/orig/ath_m50x_5_sq.jpg' />
+                    <img src='http://cdn-akamai.audio-technica.com/cms/resource_library/product_images/417738cf54264c8f/orig/ath_m50x_6_sq.jpg' />
+                    <img src='http://cdn-akamai.audio-technica.com/cms/resource_library/product_images/94cccc59624ab45a/orig/ath_m50x_7_sq.jpg' />
+                    <img src='http://cdn-akamai.audio-technica.com/cms/resource_library/product_images/57a5152f5f2c693c/orig/ath_m50x_8_sq.jpg' />
+                </div>
+                <div class='images'>
+                    <img src='http://cdn-akamai.audio-technica.com/cms/resource_library/product_images/5973f825897b85cb/orig/ath_m50xwh_2_sq.jpg' />
+                    <img src='http://cdn-akamai.audio-technica.com/cms/resource_library/product_images/1d24ae4e06883e1d/orig/ath_m50xwh_3_sq.jpg' />
+                    <img src='http://cdn-akamai.audio-technica.com/cms/resource_library/product_images/6c1d0413455b49ef/orig/ath_m50xwh_4_sq.jpg' />
+                    <img src='http://cdn-akamai.audio-technica.com/cms/resource_library/product_images/fbd3e8ae387fcfaf/orig/ath_m50xwh_5_sq.jpg' />
+                    <img src='http://cdn-akamai.audio-technica.com/cms/resource_library/product_images/6aabba96fb4d7e38/orig/ath_m50xwh_6_sq.jpg' />
+                    <img src='http://cdn-akamai.audio-technica.com/cms/resource_library/product_images/682163c0e3ea59b9/orig/ath_m50xwh_7_sq.jpg' />
+                    <img src='http://cdn-akamai.audio-technica.com/cms/resource_library/product_images/e3997d06afc04cdc/orig/ath_m50xwh_8_sq.jpg' />
+                </div>
+            </div>	    
+        </div>
+        <div class='product'>
+            <div class='main-info'>
+                <h2 class='title'>{$item['g_name']}</h2>
+                <h3 class='sub'>所属种类：{$item['g_category']==2?'生活用品':''}{$item['g_category']==0?'电子产品':''}{$item['g_category']==1?'书籍':''}{$item['g_category']==3?'电器':''}</h3>
+                
+                <h2 class='price'>￥：{$item['g_price']}</h2>
+            </div>
+            <div class='options'>
+                <ul class='color'>
+                    <li style='background: #2D3031;'></li>
+                    <li style='background: #fff;'></li>
+                </ul>
+            </div>
+            <div class='fin-check'>
+                <a href="#" class='btn main' id="contact">联系小主</a> 
+                <a href="#" class='btn side' id="store">加入心愿单</a> 
+                <a href="#" class='btn main' data-method="setTop" id="btn">大众点评</a> 
+            </div>
+            <div class='desc'>
+                <p>
+                    {$item['g_text_description']}
+                </p>
+            </div>
+        </div>
+        </div>
+    </div>	
+
+    <div class="mmm">
+            <div class="comment_list">
+                    <h2 >全部评论</h2>
+                    <hr>
+
+            </div>
+
+            
+    </div>
+    <input type="hidden" value="{$item['g_num']}" id="input">
+    <input type="hidden" value="{$item['g_publisher']}" id="user">
+    <input type="hidden" value="{$Think.session.acount}" id="my">
+    {include file="public/menu"}
+    <script src="/static/style/js/goods/index.js"></script>
+</body>
+</html>
